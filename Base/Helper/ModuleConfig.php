@@ -30,7 +30,6 @@ abstract class ModuleConfig extends AbstractHelper
     /**
      * @param $paramName
      * @return mixed
-     * @throws \Magento\Framework\Exception\NoSuchEntityException
      */
     protected function getConfigValue($paramName)
     {
@@ -41,7 +40,6 @@ abstract class ModuleConfig extends AbstractHelper
 
     /**
      * @return bool
-     * @throws \Magento\Framework\Exception\NoSuchEntityException
      */
     public function isActive()
     {
