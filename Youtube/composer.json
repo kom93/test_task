@@ -1,0 +1,17 @@
+{
+  "name": "kom/youtube",
+  "description": "N/A",
+  "require": {
+    "madcoda/php-youtube-api": "^1.2"
+  },
+  "type": "magento2-module",
+  "version": "1.0.0",
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Kom\\Youtube\\": ""
+    }
+  }
+}

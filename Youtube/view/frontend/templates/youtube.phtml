@@ -1,0 +1,29 @@
+<?php
+/** @var \Kom\Youtube\Block\Product\Youtube $block */
+$videos = $block->getVideoLinks();
+?>
+
+<?php if ($videos): ?>
+    <div id="slider-block">
+        <?php foreach ($videos as $videoLink): ?>
+            <div>
+                <iframe src="<?= $videoLink ?>"
+                        width="560" height="315" frameborder="0"></iframe>
+            </div>
+        <?php endforeach; ?>
+    </div>
+<?php else: ?>
+    <p><?= __('No videos found.') ?></p>
+<?php endif; ?>
+<script>
+    require(['jquery'], function ($) {
+        $('#slider-block').bxSlider({
+            captions: false,
+            auto: true,
+            pager: false,
+            infiniteLoop: true,
+            nextText: '   >   ',
+            prevText: '   <   '
+        });
+    });
+</script>

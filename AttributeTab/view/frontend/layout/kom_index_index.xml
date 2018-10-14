@@ -8,7 +8,7 @@
         <referenceBlock name="page.main.title" remove="true"/>
         <referenceContainer name="content">
             <block class="Kom\AttributeTab\Block\Attribute\Tab" name="main.attribute.tab"
-                   template="Kom_AttributeTab::main.phtml" cacheable="false">
+                   template="Kom_AttributeTab::main.phtml">
             </block>
         </referenceContainer>
     </body>
