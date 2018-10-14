@@ -5,6 +5,7 @@ namespace Kom\HelloWorld\CustomerData;
 use Kom\HelloWorld\Helper\ModuleConfig;
 use Magento\Customer\CustomerData\SectionSourceInterface;
 use Magento\Customer\Model\Session;
+use Magento\Framework\UrlInterface;
 
 class HelloWorld implements SectionSourceInterface
 {
@@ -19,16 +20,24 @@ class HelloWorld implements SectionSourceInterface
     protected $customerSession;
 
     /**
+     * @var UrlInterface
+     */
+    protected $url;
+
+    /**
      * HelloWorld constructor.
      * @param ModuleConfig $moduleConfig
      * @param Session $customerSession
+     * @param UrlInterface $url
      */
     public function __construct(
         ModuleConfig $moduleConfig,
-        Session $customerSession
+        Session $customerSession,
+        UrlInterface $url
     ) {
         $this->moduleConfig = $moduleConfig;
         $this->customerSession = $customerSession;
+        $this->url = $url;
     }
 
     /**
@@ -42,7 +51,11 @@ class HelloWorld implements SectionSourceInterface
             $name = __('anonymous');
         }
         return [
-            'custom_message' => __('Hello World! And you, %1 !', $name)
+            'custom_message' => __(
+                'Hello World! And you, %1! Check <a href="%2">this</a> attribute page (if enabled).',
+                $name,
+                $this->url->getUrl('kom')
+            )
         ];
     }
 }

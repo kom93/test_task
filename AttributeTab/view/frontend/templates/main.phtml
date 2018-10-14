@@ -1,0 +1,46 @@
+<?php
+
+use Kom\AttributeTab\Block\Attribute\Tab;
+
+/** @var Tab $block */
+?>
+
+<?php if ($attributeData = $block->getAttributeData()): ?>
+    <h2><?= $attributeData['title'] ?> <?= __('(options limited to %1)', Tab::OPTIONS_LIMIT) ?></h2>
+    <div class="product info detailed">
+        <div class="product data items" data-mage-init='{"tabs":{"openedState":"active"}}'>
+            <?php if ($attributeData['options']): ?>
+                <?php foreach ($attributeData['options'] as $key => $option): ?>
+                    <div class="data item title"
+                         aria-labeledby="tab-label-<?= $key ?>-title"
+                         data-role="collapsible" id="tab-label-<?= $key ?>">
+                        <a class="data switch"
+                           data-toggle="switch"
+                           href="#<?= $key ?>"
+                           id="tab-label-<?= $key ?>-title">
+                            <?= $option['title'] ?>
+                        </a>
+                    </div>
+                    <div class="data item content" id="<?= $key ?>" data-role="content">
+                        <?php if ($products = $option['products']): ?>
+                            <ul>
+                                <?php foreach ($products as $productName): ?>
+                                    <li><?= $productName ?></li>
+                                <?php endforeach; ?>
+                            </ul>
+                        <?php else: ?>
+                            <p><?= __('No products found.') ?></p>
+                        <?php endif; ?>
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p><?= __('No options found.') ?></p>
+            <?php endif; ?>
+        </div>
+    </div>
+<?php else: ?>
+    <p><?= __('No attribute data found.') ?></p>
+<?php endif; ?>
+
+<p style="font-size: 0.7em">P.S. Згідно наданих умов тестового - відображено список варіантів з вибраним значенням атрибуту, не конфігурованих
+    товарів. Атрибут можна вибрати в налаштуваннях модуля, за замовчуванням - сolor.</p>
