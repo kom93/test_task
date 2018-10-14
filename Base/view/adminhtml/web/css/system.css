@@ -1,0 +1,11 @@
+#system_config_tabs .kom-tab strong:before {
+    background: url(../images/logo.png) no-repeat;
+    height: 25px;
+    width: 25px;
+    background-size: 25px;
+    content: '';
+    margin-right: 8px;
+    display: inline-block;
+    vertical-align: bottom;
+    margin-bottom: -3px;
+}
