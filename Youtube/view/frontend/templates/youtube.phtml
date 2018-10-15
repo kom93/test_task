@@ -6,7 +6,7 @@ $videos = $block->getVideoLinks();
 <?php if ($videos): ?>
     <div id="slider-block">
         <?php foreach ($videos as $videoLink): ?>
-            <div>
+            <div class="video-item">
                 <iframe src="<?= $videoLink ?>"
                         width="560" height="315" frameborder="0"></iframe>
             </div>
@@ -21,9 +21,7 @@ $videos = $block->getVideoLinks();
             captions: false,
             auto: true,
             pager: false,
-            infiniteLoop: true,
-            nextText: '   >   ',
-            prevText: '   <   '
+            infiniteLoop: true
         });
     });
 </script>

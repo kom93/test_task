@@ -4,6 +4,8 @@
     <update handle="review_product_form_component"/>
     <head>
         <script src="Kom_Youtube::js/bxslider.js"/>
+        <css src="Kom_Youtube::css/product.video.css"/>
+        <css src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css" src_type="url"/>
     </head>
     <body>
         <referenceBlock name="product.info.details">
