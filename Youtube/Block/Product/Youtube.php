@@ -69,7 +69,9 @@ class Youtube extends \Magento\Catalog\Block\Product\View\Description
                 if ($keyword) {
                     $videos = $client->search($keyword, 2);
                     foreach ($videos as $videoData) {
-                        $videoLinks[] = $this->getVideoLinkById($videoData->id->videoId);
+                        if (isset($videoData->id->videoId)) {
+                            $videoLinks[] = $this->getVideoLinkById($videoData->id->videoId);
+                        }
                     }
                 }
             }
