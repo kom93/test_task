@@ -1,1 +1,0 @@
-1) Sales Recommendation text displayed under "Placed from IP" field at order view page (if specified).
