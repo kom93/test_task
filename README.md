@@ -2,6 +2,7 @@
 
 ## 1.1. Requirements
 Magento 2.2.x
+
 PHP 7.x
     
 ## 1.2. Technical features
@@ -16,6 +17,7 @@ Typical Magento 2 extensions installation.*
 
 ## 2.1. Requirements
 Magento 2.2.x
+
 PHP 7.x
     
 ## 2.2. Technical features
@@ -31,6 +33,7 @@ Typical Magento 2 extensions installation.*
 
 ## 3.1. Requirements
 Magento 2.2.x
+
 PHP 7.x
     
 ## 3.2. Technical features
@@ -44,6 +47,7 @@ Typical Magento 2 extensions installation.*
 
 ## 4.1. Requirements
 Magento 2.2.x
+
 PHP 7.x
     
 ## 4.2. Technical features
@@ -57,6 +61,7 @@ Typical Magento 2 extensions installation.*
 
 ## 5.1. Requirements
 Magento 2.2.x
+
 PHP 7.x
     
 ## 5.2. Technical features
@@ -72,6 +77,7 @@ Typical Magento 2 extensions installation.*
 
 ## 6.1. Requirements
 Magento 2.2.x
+
 PHP 7.x
     
 ## 6.2. Technical features
@@ -86,7 +92,9 @@ Typical Magento 2 extensions installation.*
 
 ## 7.1. Requirements
 Magento 2.2.x
+
 PHP 7.x
+
 madcoda/php-youtube-api 1.*
     
 ## 7.2. Technical features
@@ -98,3 +106,17 @@ Extension can be disabled at Admin Dashboard -> Stores -> Configuration -> Kom E
 Run "composer require madcoda/php-youtube-api" before extension installation.
 Typical Magento 2 extensions installation.*
 You need to specify Youtube API key at module configuration page (Admin Dashboard -> Stores -> Configuration -> Kom Extensions -> Youtube Configuration).
+
+
+# Summary
+
+These extensions are developed only as a code examples, and should not be used at production.
+They are tested on Magento 2.2.3 version running on apache2 with PHP 7.1 as module, 
+but should work on Magento 2.0.x - 2.3.x running on nginx/apache2 with PHP 5.6.x/7.x as well.
+
+\* Typical Magento 2 extensions installation: 
+ - Upload module files to your server (directory MAGENTO_ROOT/app/code/Kom, create does not exist)
+ - Run ssh command "bin/magento setup:upgrade"
+ - Flush magento cache (from admin dashboard, or by using ssh command "bin/magento cache:flush")
+ - (Only for "production" deploy mode) Run ssh command "bin/magento setup:di:compile"
+ - (Only for "production" deploy mode) Run ssh command "bin/magento setup:static-content:deploy"
