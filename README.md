@@ -115,7 +115,7 @@ They are tested on Magento 2.2.3 version running on apache2 with PHP 7.1 as modu
 but should work on Magento 2.0.x - 2.3.x running on nginx/apache2 with PHP 5.6.x/7.x as well.
 
 \* Typical Magento 2 extensions installation: 
- - Upload module files to your server (directory MAGENTO_ROOT/app/code/Kom, create does not exist)
+ - Upload module files to your server (directory MAGENTO_ROOT/app/code/Kom, create if does not exist)
  - Run ssh command "bin/magento setup:upgrade"
  - Flush magento cache (from admin dashboard, or by using ssh command "bin/magento cache:flush")
  - (Only for "production" deploy mode) Run ssh command "bin/magento setup:di:compile"
